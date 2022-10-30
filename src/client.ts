@@ -10,5 +10,5 @@ const trpc = createTRPCProxyClient<AppRouter>({
 });
 
 // Inferred types
-const user = await trpc.userById.query("1");
-const createdUser = await trpc.userCreate.mutate({ name: "sachinraja" });
+const user = await trpc.getUser.query("1");
+const createdUser = await trpc.createUser.mutate({ name: "sachinraja" });
