@@ -8,5 +8,13 @@
   },
   "keywords": [],
   "author": "",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "@tanstack/react-query": "^4.13.4",
+    "@trpc/client": "^10.0.0-proxy-beta.26",
+    "@trpc/next": "^10.0.0-proxy-beta.26",
+    "@trpc/react-query": "^10.0.0-proxy-beta.26",
+    "@trpc/server": "^10.0.0-proxy-beta.26",
+    "zod": "^3.19.1"
+  }
 }
