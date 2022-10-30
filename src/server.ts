@@ -4,6 +4,7 @@ import {
   CreateExpressContextOptions,
   createExpressMiddleware,
 } from "@trpc/server/adapters/express";
+import cors from "cors";
 import express from "express";
 import { v4 as uuidv4 } from "uuid";
 import { z } from "zod";
@@ -40,6 +41,11 @@ const appRouter = t.router({
 });
 
 const app = express();
+const corsOptions = {
+  origin: "http://localhost:3000",
+  optionsSuccessStatus: 200,
+};
+app.use(cors(corsOptions));
 app.use(
   "/trpc",
   createExpressMiddleware({

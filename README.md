@@ -9,8 +9,10 @@ npm install @trpc/server@next @trpc/client@next @trpc/react-query@next @trpc/nex
 npm install uuid
 npm install --save-dev @types/uuid
 npm install --save-dev nodemon ts-node wait-on npm-run-all
-
 npm init @eslint/config
+
+# for server-side
+npm install cors
 
 # for client-side
 npm install react-dom
