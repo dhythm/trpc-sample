@@ -5,9 +5,12 @@ import {
   createExpressMiddleware,
 } from "@trpc/server/adapters/express";
 import express from "express";
+import { v4 as uuidv4 } from "uuid";
 import { z } from "zod";
 
-const createContext = ({ req, res }: CreateExpressContextOptions) => ({});
+const createContext = ({ req, res }: CreateExpressContextOptions) => {
+  return { req, res };
+};
 type Context = inferAsyncReturnType<typeof createContext>;
 
 const t = initTRPC.context<Context>().create();
@@ -22,7 +25,7 @@ const appRouter = t.router({
   createUser: t.procedure
     .input(z.object({ name: z.string().min(5) }))
     .mutation(async (req) => {
-      const id = `${Math.random()}`;
+      const id = `${uuidv4()}`;
       const user = {
         id,
         name: req.input.name,
