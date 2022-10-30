@@ -5,10 +5,10 @@
   "main": "index.js",
   "scripts": {
     "dev:server": "nodemon -e ts -w . -x ts-node ./src/server",
-    "dev:client": "nodemon -e ts -w . -x 'wait-on tcp:2021 && ts-node ./src/client'",
+    "dev:client": "webpack serve --mode development",
     "dev": "run-p dev:* --print-label",
-    "build": "tsc",
     "start": "npm run dev",
+    "postinstall": "npx typesync",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -21,16 +21,38 @@
     "@trpc/react-query": "^10.0.0-proxy-beta.26",
     "@trpc/server": "^10.0.0-proxy-beta.26",
     "express": "^4.18.2",
+    "react-dom": "^18.2.0",
     "uuid": "^9.0.0",
     "zod": "^3.19.1"
   },
   "devDependencies": {
+    "@babel/core": "^7.19.6",
+    "@babel/preset-env": "^7.19.4",
+    "@babel/preset-react": "^7.18.6",
+    "@types/babel__core": "^7.1.19",
+    "@types/babel__preset-env": "^7.9.2",
     "@types/express": "^4.17.14",
+    "@types/nodemon": "^1.19.2",
     "@types/react": "^18.0.24",
+    "@types/react-dom": "^18.0.8",
     "@types/uuid": "^8.3.4",
+    "@types/wait-on": "^5.3.1",
+    "@typescript-eslint/eslint-plugin": "^5.41.0",
+    "@typescript-eslint/parser": "^5.41.0",
+    "babel-loader": "^9.0.0",
+    "css-loader": "^6.7.1",
+    "eslint": "^8.26.0",
+    "eslint-loader": "^4.0.2",
+    "eslint-plugin-react": "^7.31.10",
+    "html-webpack-plugin": "^5.5.0",
     "nodemon": "^2.0.20",
     "npm-run-all": "^4.1.5",
+    "style-loader": "^3.3.1",
+    "ts-loader": "^9.4.1",
     "ts-node": "^10.9.1",
-    "wait-on": "^6.0.1"
+    "wait-on": "^6.0.1",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.11.1"
   }
 }

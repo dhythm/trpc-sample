@@ -23,6 +23,11 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true /* Report errors for fallthrough cases in switch statement. */
   },
+  "ts-node": {
+    "compilerOptions": {
+      "module": "commonjs"
+    }
+  },
   "include": ["src"],
   "exclude": ["node_modules"]
 }

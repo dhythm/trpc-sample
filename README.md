@@ -7,11 +7,21 @@ npm install @trpc/server@next @trpc/client@next @trpc/react-query@next @trpc/nex
 
 # for client-side and server-side
 npm install uuid
-npm i --save-dev @types/uuid
+npm install --save-dev @types/uuid
 npm install --save-dev nodemon ts-node wait-on npm-run-all
 
+npm init @eslint/config
+
 # for client-side
-npm i --save-dev @types/react
+npm install react-dom
+npm install --save-dev @types/react @types/react-dom
+npm install --save-dev webpack webpack-cli
+npm install --save-dev html-webpack-plugin
+npm install --save-dev webpack-dev-server
+npm install --save-dev @babel/core @babel/preset-env babel-loader
+npm install --save-dev style-loader css-loader eslint-loader ts-loader
+# npm install --save-dev typesync
+npm install --save-dev @babel/preset-react
 ```
 
 ## Getting started

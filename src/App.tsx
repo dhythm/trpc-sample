@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import IndexPage from "./pages/IndexPage";
 import { trpc } from "./utils/trpc";
 
-export function App() {
+function App() {
   const [queryClient] = useState(() => new QueryClient());
   const [trpcClient] = useState(() =>
     trpc.createClient({
@@ -29,3 +29,5 @@ export function App() {
     </trpc.Provider>
   );
 }
+
+export default App;
