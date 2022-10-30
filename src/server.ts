@@ -16,11 +16,15 @@ type Context = inferAsyncReturnType<typeof createContext>;
 const t = initTRPC.context<Context>().create();
 
 type User = { id: string; name: string };
-const userList: User[] = [];
+const userList: User[] = [
+  { id: "9b47e0ac-899a-42ec-9459-5370ee6f4fb3", name: "Bilbo" },
+];
 
 const appRouter = t.router({
   getUser: t.procedure.input(z.string()).query((req) => {
-    return { id: req.input, name: "Bilbo" };
+    const user = userList.find((v) => v.id === req.input);
+    if (!user) return null;
+    return user;
   }),
   createUser: t.procedure
     .input(z.object({ name: z.string().min(5) }))

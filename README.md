@@ -9,6 +9,9 @@ npm install @trpc/server@next @trpc/client@next @trpc/react-query@next @trpc/nex
 npm install uuid
 npm i --save-dev @types/uuid
 npm install --save-dev nodemon ts-node wait-on npm-run-all
+
+# for client-side
+npm i --save-dev @types/react
 ```
 
 ## Getting started
